@@ -4,10 +4,10 @@
 	<view class="Font">
 		<text>Wissen</text>
 	</view>
-   <view class="weui-search-bar__form" bindtap='toSearch'>
-     <view class="weui-search-bar__box">
-      <text>请输入内容</text>
+   	<view class="weui-search-bar__form" bindtap='toSearch'>
+		<view class="weui-search-bar__box">
+      			<text>请输入内容</text>
 			<icon type="search" size="30"></icon>
-    </view> 
-  </view>
+    		</view> 
+  	</view>
 </view>
