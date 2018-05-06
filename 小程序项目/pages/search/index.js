@@ -8,7 +8,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-	
+
 	},
 	/**
 	 * 生命周期函数--监听页面加载
@@ -29,15 +29,15 @@ Page({
 	wxSearchConfirm: WxSearch.wxSearchConfirm,  // 搜索函数
 	wxSearchClear: WxSearch.wxSearchClear,  // 清空函数
 	mySearchFunction: function (value) {
-	// do your job here
-	// 示例：跳转
+		// do your job here
+		// 示例：跳转
 		wx.redirectTo({
 			url: '../index/index?searchValue=' + value
 		})
 	},
 	myGobackFunction: function () {
-	// do your job here
-	// 示例：返回
+		// do your job here
+		// 示例：返回
 		wx.redirectTo({
 			url: '../index/index?searchValue=返回'
 		})
@@ -46,27 +46,27 @@ Page({
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
 	onReady: function () {
-	
+
 	},
 
 	/**
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-	
+
 	},
 
 	/**
 	 * 生命周期函数--监听页面隐藏
 	 */
 	onHide: function () {
-	
+
 	},
 
 	/**
 	 * 生命周期函数--监听页面卸载
 	 */
 	onUnload: function () {
-	
+
 	},
 })

@@ -1,27 +1,27 @@
 <!-- 我的设置页面 -->
 <view class="mine-wrapper">
-  	<view class="avatar-wrapper">
-      		<view class="avatar">
-        		<image class="avatar-image" src="{{userInfo.avatarUrl}}"></image>
-      		</view>
-      		<view class="nickname">
-        		<text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      		</view>
-	</view>
-	<view class="my-project" id="0" style="background-color:{{backgroundcolor[0]}}" bindtouchstart='changeBackground' bindtouchend='toMyproject'>
-		<view class="icon">
-        		<image class="project-image" src="../../images/icons/project.png"></image>
-      		</view>
-    		<view class="project">
-        		<text>我的项目</text>
-    		</view>
-	</view>
-	<view class="my-project" id="1" style="background-color:{{backgroundcolor[1]}}" bindtouchstart='changeBackground' bindtouchend='toMysubscribe' >
-		<view class="icon">
-        		<image class="project-image" src="../../images/icons/subscribe.png"></image>
-      		</view>
-    		<view class="project">
-        		<text>我的订阅</text>
-    		</view>
-	</view>
+        <view class="avatar-wrapper">
+                <view class="avatar">
+                        <image class="avatar-image" src="{{userInfo.avatarUrl}}"></image>
+                </view>
+                <view class="nickname">
+                        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+                </view>
+        </view>
+        <view class="my-project" id="0" style="background-color:{{backgroundcolor[0]}}" bindtouchstart='changeBackground' bindtouchend='toMyproject'>
+                <view class="icon">
+                        <image class="project-image" src="../../images/icons/project.png"></image>
+                </view>
+                <view class="project">
+                        <text>我的项目</text>
+                </view>
+        </view>
+        <view class="my-project" id="1" style="background-color:{{backgroundcolor[1]}}" bindtouchstart='changeBackground' bindtouchend='toMysubscribe'>
+                <view class="icon">
+                        <image class="project-image" src="../../images/icons/subscribe.png"></image>
+                </view>
+                <view class="project">
+                        <text>我的订阅</text>
+                </view>
+        </view>
 </view>
