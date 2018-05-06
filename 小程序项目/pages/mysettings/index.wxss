@@ -1,26 +1,26 @@
 .avatar-wrapper {
-  background: #fff;
-  padding:20rpx;
-	display: flex;
+	background: #fff;
+	padding:20rpx;
+		display: flex;
 }
 
 .avatar-wrapper .avatar .avatar-image{
 	width: 150rpx;
-  height: 150rpx;
-  border-radius: 50%;
+	height: 150rpx;
+	border-radius: 50%;
 }
 
 .avatar-wrapper .avatar{
 	width: 150rpx;
-  height: 150rpx;
+ 	 height: 150rpx;
 } 
 
 
 .mine-wrapper{
 	background: lightgray;
 	position: fixed;
-  height: 100%;
-  width: 100%;
+	height: 100%;
+	width: 100%;
 }
 
 .avatar-wrapper .nickname .userinfo-nickname{
@@ -36,14 +36,14 @@
 .my-project{
 	margin-top: 20rpx;
 	background: #fff;
-  padding:20rpx;
+  	padding:20rpx;
 	display: flex;
 }
 
 .my-project .icon .project-image{
 	width: 60rpx;
-  height: 60rpx;
-  border-radius: 50%;
+	height: 60rpx;
+	border-radius: 50%;
 }
 
 .my-project .icon{
