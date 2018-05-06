@@ -61,3 +61,42 @@ page {
         top: 10%;
         left: 20%;
 }
+.text_title{
+  animation: text_title 5s linear infinite;
+}
+@keyframes text_title{
+  from{
+    color: red;
+    font-size: 200%;
+  }
+  to{
+    color: green;
+    font-size: 250%;
+    font-style: italic;
+  }
+}
+.Move_image{
+  width: 20%;
+  height: 20%;
+  animation: Move_image 10s linear infinite;
+}
+@keyframes Move_image{
+  0%{
+    top: 0%;
+  }
+  25%{
+    top:25%;
+  }
+  30%{
+    top:30%;
+  }
+  50%{
+    top:50%;
+  }
+  75%{
+    top:75%;
+  }
+  100%{
+    top:100%;
+  }
+}
