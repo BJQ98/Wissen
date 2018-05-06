@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/mainpage/index",
+    "pages/mysettings/index",
+    "pages/search/index",
+    "pages/myproject/index",
+    "pages/mysubcribe/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "维森学术会议助手",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#1296db",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/mainpage/index",
+        "text": "搜索"
+      },
+      {
+        "pagePath": "pages/mysettings/index",
+        "text": "我的"
+      }
+    ]
+  }
+}

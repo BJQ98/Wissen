@@ -1,0 +1,57 @@
+.avatar-wrapper {
+  background: #fff;
+  padding:20rpx;
+	display: flex;
+}
+
+.avatar-wrapper .avatar .avatar-image{
+	width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+
+.avatar-wrapper .avatar{
+	width: 150rpx;
+  height: 150rpx;
+} 
+
+
+.mine-wrapper{
+	background: lightgray;
+	position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.avatar-wrapper .nickname .userinfo-nickname{
+	color: gray;
+}
+
+.avatar-wrapper .nickname{
+	 margin-top: 20rpx ;
+	 margin-left: 40rpx;
+	 font-size: 130%;
+} 
+
+.my-project{
+	margin-top: 20rpx;
+	background: #fff;
+  padding:20rpx;
+	display: flex;
+}
+
+.my-project .icon .project-image{
+	width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+
+.my-project .icon{
+	display: flex;
+	justify-content: center;
+}
+
+.my-project .project{
+	margin-left: 20rpx;
+	margin-top: 5rpx;
+}
