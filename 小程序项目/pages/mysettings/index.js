@@ -18,18 +18,12 @@ Page({
 	},
 	toMyproject: function () {
 		var that = this;
-		that.setData({
-			'backgroundcolor[0]': 'white',
-		})
 		wx.navigateTo({
 			url: '../../pages/myproject/index',
 		})
 	},
 	toMysubscribe: function () {
 		var that = this;
-		that.setData({
-			'backgroundcolor[1]': 'white',
-		})
 		wx.navigateTo({
 			url: '../../pages/mysubcribe/index',
 		})
@@ -61,7 +55,9 @@ Page({
 	 * 生命周期函数--监听页面隐藏
 	 */
 	onHide: function () {
-
+		this.setData({
+			backgroundcolor: ['white', 'white'],
+		})
 	},
 
 	/**
