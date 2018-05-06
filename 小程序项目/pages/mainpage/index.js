@@ -6,9 +6,9 @@ Page({
 		userInfo: {},
 	},
 	//事件处理函数
-	toSearch:function(){
+	toSearch: function () {
 		wx.navigateTo({
-			url:'../../pages/search/index'
+			url: '../../pages/search/index'
 		})
 	},
 	onLoad: function () {
@@ -17,9 +17,9 @@ Page({
 				userInfo: app.globalData.userInfo,
 				hasUserInfo: true
 			})
-		} else if (this.data.canIUse){
-		// 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-		// 所以此处加入 callback 以防止这种情况
+		} else if (this.data.canIUse) {
+			// 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+			// 所以此处加入 callback 以防止这种情况
 			app.userInfoReadyCallback = res => {
 				this.setData({
 					userInfo: res.userInfo,
@@ -27,7 +27,7 @@ Page({
 				})
 			}
 		} else {
-	// 在没有 open-type=getUserInfo 版本的兼容处理
+			// 在没有 open-type=getUserInfo 版本的兼容处理
 			wx.getUserInfo({
 				success: res => {
 					app.globalData.userInfo = res.userInfo
@@ -39,7 +39,7 @@ Page({
 			})
 		}
 	},
-	getUserInfo: function(e) {
+	getUserInfo: function (e) {
 		app.globalData.userInfo = e.detail.userInfo
 		this.setData({
 			userInfo: e.detail.userInfo,
