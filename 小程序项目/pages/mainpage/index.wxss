@@ -62,7 +62,7 @@ page {
         left: 20%;
 }
 .text_title{
-  animation: text_title 5s linear infinite;
+  animation: text_title 10s linear infinite;
 }
 @keyframes text_title{
   from{
@@ -78,7 +78,7 @@ page {
 .Move_image{
   width: 20%;
   height: 20%;
-  animation: Move_image 10s linear infinite;
+  /*animation: Move_image 10s linear infinite;*/
 }
 @keyframes Move_image{
   0%{
