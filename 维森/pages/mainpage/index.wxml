@@ -10,4 +10,5 @@
                         <icon type="search" size="30"></icon>
                 </view>
         </view>
+        <button  open-type= "getUserInfo"  class= "recordingNoneS wx-contact-text"> 点击授权 </button>
 </view>

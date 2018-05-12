@@ -1,4 +1,4 @@
-const app = getApp()
+const app = getApp();
 
 Page({
 	data: {
@@ -9,21 +9,21 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	changeBackground: function (e) {
-		var that = this;
-		var ids = e.currentTarget.id;
-		var changecolor = "backgroundcolor[" + ids + "]"
+		let that = this;
+		let ids = e.currentTarget.id;
+		let changecolor = "backgroundcolor[" + ids + "]"
 		that.setData({
 			[changecolor]: 'lightgray',
 		})
 	},
 	toMyproject: function () {
-		var that = this;
+		let that = this;
 		wx.navigateTo({
 			url: '../../pages/myproject/index',
 		})
 	},
 	toMysubscribe: function () {
-		var that = this;
+		let that = this;
 		wx.navigateTo({
 			url: '../../pages/mysubcribe/index',
 		})
@@ -31,6 +31,7 @@ Page({
 
 	onLoad: function (options) {
 		if (app.globalData.userInfo) {
+      console.log(1111)
 			this.setData({
 				userInfo: app.globalData.userInfo,
 			})
