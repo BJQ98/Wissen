@@ -4,7 +4,7 @@
         display: flex;
 }
 
-.avatar-wrapper .avatar open-data {
+.avatar-wrapper .avatar .avatar-image {
         width: 150rpx;
         height: 150rpx;
         border-radius: 50%;
@@ -22,7 +22,7 @@
         width: 100%;
 }
 
-.avatar-wrapper .nickname open-data {
+.avatar-wrapper .nickname .userinfo-nickname {
         color: gray;
 }
 
