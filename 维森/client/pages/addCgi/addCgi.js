@@ -8,7 +8,6 @@ Page({
         requestResult: '',
         canIUseClipboard: wx.canIUse('setClipboardData')
     },
-
     testCgi: function () {
         util.showBusy('请求中...')
         var that = this
@@ -27,23 +26,24 @@ Page({
             }
         })
     },
-
-    copyCode: function (e) {
-        var codeId = e.target.dataset.codeId
-        wx.setClipboardData({
-            data: code[codeId - 1],
-            success: function () {
-                util.showSuccess('复制成功')
-            }
-        })
+    test:function(){
+      var that = this
+      qcloud.request({
+        url: `${config.service.host}/weapp/demo`,
+        data:{
+          keyword:'litary'
+        },
+        success(result) {
+          console.log(result)
+          util.showSuccess('请求成功完成')
+          that.setData({
+            requestResult: JSON.stringify(result.data)
+          })
+        },
+        fail(error) {
+          util.showModel('请求失败', error);
+          console.log('request fail', error);
+        }
+      })
     }
 })
-
-var code = [
-`router.get('/demo', controllers.demo)`,
-`module.exports = ctx => {
-    ctx.state.data = {
-        msg: 'Hello World'
-    }
-}`
-]

@@ -10,5 +10,4 @@
                         <icon type="search" size="30"></icon>
                 </view>
         </view>
-        <button wx:if='{{!logged}}' open-type='getUserInfo' class='authorize'>点击授权</button>
 </view>

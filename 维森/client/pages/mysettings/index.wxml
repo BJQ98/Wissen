@@ -5,7 +5,8 @@
                         <image class="avatar-image" src="{{logged ? userInfo.avatarUrl : './user-unlogin.png'}}"></image>
                 </view>
                 <view class="nickname">
-                        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+                      <button class="userinfo-nickname" wx:if="{{!logged}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击授权</button>
+                      <text class="userinfo-nickname" wx:else>{{userInfo.nickName}}</text>
                 </view>
         </view>
         <view class="my-project" id="0" style="background-color:{{backgroundcolor[0]}}" bindtouchstart='changeBackground' bindtouchend='toMyproject'>
