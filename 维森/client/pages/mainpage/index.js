@@ -5,19 +5,19 @@ var config = require('../../config')
 var util = require('../../utils/util.js')
 
 Page({
-	data: {
+  data: {
     userInfo: {},
     logged: false,
     takeSession: false,
     requestResult: ''
-	},
-	//事件处理函数
-	toSearch: function () {
-		wx.navigateTo({
-			url: '../../pages/search/index'
-		})
-	},
-	onLoad: function () {
-    
-	},
+  },
+  //事件处理函数
+  toSearch: function () {
+    wx.navigateTo({
+      url: '../../pages/search/index'
+    })
+  },
+  onLoad: function () {
+
+  },
 });

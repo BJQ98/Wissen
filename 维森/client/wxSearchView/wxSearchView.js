@@ -30,14 +30,12 @@ function init(that, hotKeys, tipKeys, searchFunction, goBackFunction) {
 	__tipKeys = tipKeys;
 	__searchFunction = searchFunction;
 	__goBackFunction = goBackFunction;
-
 	var temData = {};
 	var barHeight = 43;
 	var view = {
 		barHeight: barHeight
 	}
 	temData.hotKeys = hotKeys;
-
 	wx.getSystemInfo({
 		success: function (res) {
 			var wHeight = res.windowHeight;

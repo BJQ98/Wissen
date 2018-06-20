@@ -1,0 +1,52 @@
+<!--pages/searchresult/index.wxml-->
+<view class="all">
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="{{searchValue}}" />
+        <view class="weui-icon-clear" wx:if="{{wxSearchData.value.length > 0}}" bindtap="wxSearchClear">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="weui-search-bar__cancel-btn" bindtap="returnsearch">
+      <text data-key='search'>返回</text>
+    </view>
+  </view>
+  <view class="resultview" wx:if="{{requestResult[0]}}">
+    <block wx:for="{{requestResult}}">
+      <view class="searchResult" data-detail='{{item}}' bindtap='todetail'>
+        <view class="eventName">
+          <text>{{item.name}}</text>
+        </view>
+        <view class="eventcategory">
+          <text class="bold">当前分类：</text>
+          <text>{{item.category}}</text>
+        </view>
+        <view class="eventCountry">
+          <text class="bold">会议时间：</text>
+          <text>{{item.eventStart}}~{{item.eventEnd}}</text>
+        </view>
+        <view class="eventDate">
+          <text class="bold">举办国家：</text>
+          <text>{{item.eventCountry}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="fail" wx:else>
+    <view>
+      <icon type="warn" size="160" color="dodgerblue" />
+    </view>
+    <view>
+      <text class="sorry">抱歉没有找到~\n</text>
+    </view>
+    <view>
+      <text class="sorry">换个关键词试试吧(⁎˃ᴗ˂⁎)</text>
+    </view>
+    <view>
+      <text class="sorry">没登录的话先登录吧~</text>
+    </view>
+  </view>
+</view>

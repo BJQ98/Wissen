@@ -1,0 +1,85 @@
+/* pages/detailresult/index.wxss */
+
+.all {
+  position: fixed;
+  background-color: whitesmoke;
+  height: 100%;
+}
+
+.eventName {
+  font-weight: bold;
+  padding-bottom: 15rpx;
+  border-bottom-style: dashed;
+  border-bottom-width: 3rpx;
+  border-bottom-color: gray;
+  background-color: white;
+  margin: 10rpx 20rpx 15rpx 20rpx;
+}
+
+.eventDate {
+  font-size: small;
+  margin-bottom: 7rpx;
+  margin: 10rpx 20rpx 15rpx 20rpx;
+}
+
+.eventCountry {
+  margin-bottom: 10rpx;
+  font-size: small;
+  margin: 10rpx 20rpx 10rpx 20rpx;
+}
+
+.firstpart {
+  background-color: white;
+}
+
+.secondpart {
+  margin-top: 30rpx;
+  background-color: white;
+  padding-right: 10rpx;
+}
+
+.link {
+  text-decoration: underline;
+}
+
+.eventWeb {
+  padding-top: 12rpx;
+  font-size: small;
+  margin: 30rpx 20rpx 10rpx 20rpx;
+}
+
+.eventPerson {
+  font-size: small;
+  margin: 0rpx 20rpx 10rpx 20rpx;
+}
+
+.eventDescription {
+  padding-top: 6rpx;
+  font-size: small;
+  margin: 13rpx 20rpx 15rpx 0rpx;
+  border-left-style:solid;
+  border-left-color: blue;
+  border-left-width: 14rpx;
+}
+
+.eventOrg {
+  font-size: small;
+  margin: 0rpx 20rpx 15rpx 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.thirdpart {
+  margin-top: 12rpx;
+  background-color: white;
+  padding-bottom: 20rpx;
+  padding-top: 2rpx;
+}
+
+.blueborder{
+  padding-left: 20rpx;
+}
+.textversion{
+  padding-left: 30rpx;
+  padding-right: 20rpx;
+  padding-bottom: 10rpx;
+}

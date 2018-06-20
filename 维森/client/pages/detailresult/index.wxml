@@ -1,0 +1,40 @@
+<!--pages/detailresult/index.wxml-->
+<view class="all">
+  <view class="firstpart">
+    <view class="eventName">
+      <text>{{resultValue.name}}</text>
+    </view>
+    <view class="eventDate">
+      <text>会议时间：</text>
+      <text>{{resultValue.eventStart}}~{{resultValue.eventEnd}}</text>
+    </view>
+    <view class="eventCountry">
+      <text>举办国家：</text>
+      <text>{{resultValue.eventCountry}}</text>
+    </view>
+    <view class="eventPerson">
+      <text>专家：</text>
+      <text>{{resultValue.contactPerson}}</text>
+    </view>
+    <view class="eventOrg">
+      <text>组织机构：</text>
+      <text>{{resultValue.eventOrganiser}}</text>
+    </view>
+  </view>
+  <view class="thirdpart">
+    <view class="eventDescription">
+      <text class="blueborder">会议网站：\n</text>
+    </view>
+    <view class="textversion">
+      <text class="link" selectable='true'>{{resultValue.eventWebsite}}</text>
+    </view>
+  </view>
+  <view class="thirdpart">
+    <view class="eventDescription">
+      <text class="blueborder">会议摘要：\n</text>
+    </view>
+    <view class="textversion">
+      <text>{{resultValue.eventDescription}}</text>
+    </view>
+  </view>
+</view>

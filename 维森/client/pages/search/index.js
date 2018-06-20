@@ -1,9 +1,7 @@
 // pages/search/index.js
-
 var WxSearch = require('../../wxSearchView/wxSearchView.js');
 
 Page({
-
 	/**
 	 * 页面的初始数据
 	 */
@@ -17,8 +15,8 @@ Page({
 		var that = this;
 		WxSearch.init(
 			that,  // 本页面一个引用
-			['杭州', '嘉兴', "海宁", "桐乡", '宁波', '金华'], // 热点搜索推荐，[]表示不使用
-			['湖北', '湖南', '北京', "南京"],// 搜索匹配，[]表示不使用
+			['Transport', 'Military'], // 热点搜索推荐，[]表示不使用
+			[],// 搜索匹配，[]表示不使用
 			that.mySearchFunction, // 提供一个搜索回调函数
 			that.myGobackFunction //提供一个返回回调函数
 		);
@@ -31,8 +29,8 @@ Page({
 	mySearchFunction: function (value) {
 		// do your job here
 		// 示例：跳转
-		wx.redirectTo({
-			url: '../index/index?searchValue=' + value
+    wx.navigateTo({
+			url: '../searchresult/index?searchValue=' + value
 		})
 	},
 	myGobackFunction: function () {
@@ -46,7 +44,6 @@ Page({
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
 	onReady: function () {
-
 	},
 
 	/**
@@ -60,13 +57,11 @@ Page({
 	 * 生命周期函数--监听页面隐藏
 	 */
 	onHide: function () {
-
 	},
 
 	/**
 	 * 生命周期函数--监听页面卸载
 	 */
 	onUnload: function () {
-
 	},
 })

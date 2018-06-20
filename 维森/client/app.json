@@ -5,7 +5,8 @@
     "pages/search/index",
     "pages/myproject/index",
     "pages/mysubcribe/index",
-    "pages/addCgi/addCgi"
+    "pages/searchresult/index",
+    "pages/detailresult/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -15,20 +16,20 @@
   },
   "tabBar": {
     "color": "#000000",
-    "selectedColor": "#1296db",
+    "selectedColor": "black",
     "backgroundColor": "#fff",
     "list": [
       {
         "pagePath": "pages/mainpage/index",
-        "text": "搜索"
-      },
-      {
-        "pagePath": "pages/addCgi/addCgi",
-        "text": "测试"
+        "text": "主页",
+        "iconPath":"images/tabbar/homepage.png",
+        "selectedIconPath":"images/tabbar/homepage_fill.png"
       },
       {
         "pagePath": "pages/mysettings/index",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "images/tabbar/people.png",
+        "selectedIconPath": "images/tabbar/people_fill.png"
       }
     ]
   }

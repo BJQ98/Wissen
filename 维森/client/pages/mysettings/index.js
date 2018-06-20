@@ -6,11 +6,10 @@ Page({
 	data: {
 		backgroundcolor: ['white', 'white'],
 		userInfo: {},
-    logged: false
+    logged: false,
+    requestResult:''
 	},
-	/**
-	 * 生命周期函数--监听页面加载
-	 */
+
 	changeBackground: function (e) {
 		let that = this;
 		let ids = e.currentTarget.id;
@@ -193,17 +192,66 @@ Page({
 	onShareAppMessage: function () {
 
 	},
+  changeword:function(){
+    var that = this
+    var num = Math.random()
+    num = Math.ceil(num * 112)
+    if (!this.data.logged) 
+    qcloud.request({
+      url: `${config.service.host}/weapp/word`,
+      data: {
+        id: num
+      },
+      success(result) {
+        that.setData({
+          requestResult: result.data.data[0]
+        })
+      },
+      fail(error) {
+        util.showModel('请求失败', error);
+        console.log('request fail', error);
+      }
+    })
+  },
+  changeword:function(){
+    var that = this
+    var num = Math.random()
+    num = Math.ceil(num * 112)
+    qcloud.request({
+      url: `${config.service.host}/weapp/word`,
+      data: {
+        id: num
+      },
+      success(result) {
+        that.setData({
+          requestResult: result.data.data[0]
+        })
+      },
+      fail(error) {
+        util.showModel('请求失败', error);
+        console.log('request fail', error);
+      }
+    })
+  },
   onLoad: function (options) {
-    // var that = this;
-    // wx.getUserInfo({
-    //   success: function (res) {
-    //     console.log(res)
-    //     that.setData({
-    //       userInfo: res.userInfo,
-    //       logged: true
-    //     })
-    //   }
-    // })
+    var that=this
+    var num = Math.random()
+    num = Math.ceil(num * 112)
     this.login();
+    qcloud.request({
+      url: `${config.service.host}/weapp/word`,
+      data: {
+        id: num
+      },
+      success(result) {
+        that.setData({
+          requestResult: result.data.data[0]
+        })
+      },
+      fail(error) {
+        util.showModel('请求失败', error);
+        console.log('request fail', error);
+      }
+    })
   },
 })
