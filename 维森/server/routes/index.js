@@ -35,4 +35,5 @@ router.get('/message', controllers.message.get)
 router.post('/message', controllers.message.post)
 router.get('/demo', controllers.demo)
 router.get('/word', controllers.word)
+router.get('/collect', controllers.collect)
 module.exports = router

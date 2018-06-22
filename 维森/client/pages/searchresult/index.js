@@ -5,6 +5,7 @@ var config = require('../../config')
 var util = require('../../utils/util.js')
 var base64 = require('../../utils/base64.js')
 
+
 Page({
 
   /**
@@ -12,7 +13,8 @@ Page({
    */
   data: {
     searchValue:'',
-    requestResult: []
+    requestResult: [],
+    translated:true
   },
   returnsearch:function(){
     wx.navigateBack()
@@ -32,8 +34,12 @@ Page({
       },
       success(result) {
         util.showSuccess('请求成功完成')
+        var tempdata = result.data.data
+        tempdata.sort(function (a, b) {
+          return a.eventStart < b.eventStart ? 1 : -1; 
+        })
         that.setData({
-          requestResult: result.data.data
+          requestResult: tempdata
         })
       },
       fail(error) {
@@ -43,11 +49,19 @@ Page({
     })
   },
   todetail:function(e){
-    var result = JSON.stringify(e.currentTarget.dataset.detail)
+    var that=this
+    var res=e.currentTarget.dataset.detail
+    res.translated = that.data.translated
+    var result = JSON.stringify(res)
     let mode64 = base64.encode(result)
     let modeEncode = encodeURIComponent(mode64)
     wx.navigateTo({
       url: '../detailresult/index?resultValue=' + modeEncode
+    })
+  },
+  switchChange:function(e){
+    this.setData({
+      translated: e.detail.value
     })
   },
   /**
@@ -60,7 +74,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
   },
 
   /**

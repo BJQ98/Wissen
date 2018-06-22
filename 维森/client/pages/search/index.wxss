@@ -151,7 +151,7 @@
 
 .weui-icon-clear {
         position: absolute;
-        top: 0;
+        top: 11rpx;
         right: 0;
         padding: 7rpx 8rpx;
         font-size: 0;

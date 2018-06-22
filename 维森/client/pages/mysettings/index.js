@@ -34,9 +34,7 @@ Page({
 
   login: function () {
     if (this.data.logged) return
-
     var that = this
-
     // 调用登录接口
     qcloud.login({
       success(result) {
@@ -112,7 +110,6 @@ Page({
 
   doLogin: function (options) {
     var that = this;
-
     wx.login({
       success: function (loginResult) {
         var loginParams = {

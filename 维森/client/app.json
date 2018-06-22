@@ -32,5 +32,11 @@
         "selectedIconPath": "images/tabbar/people_fill.png"
       }
     ]
+  },
+  "plugins": {
+      "WechatSI": {
+      "version": "0.0.7",
+      "provider": "wx069ba97219f66d99"
+    }
   }
 }

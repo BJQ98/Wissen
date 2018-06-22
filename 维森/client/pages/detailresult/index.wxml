@@ -20,6 +20,8 @@
       <text>组织机构：</text>
       <text>{{resultValue.eventOrganiser}}</text>
     </view>
+      <button class="collect" size="mini" bindtap="collect" wx:if="{{!collected}}">收藏</button>
+      <button class="collect" size="mini" bindtap="uncollect" wx:else>已收藏</button>
   </view>
   <view class="thirdpart">
     <view class="eventDescription">
@@ -34,7 +36,8 @@
       <text class="blueborder">会议摘要：\n</text>
     </view>
     <view class="textversion">
-      <text>{{resultValue.eventDescription}}</text>
+      <text>{{resultValue.eventDescription}}\n</text>
+      <text>{{transDescription}}</text>
     </view>
   </view>
 </view>

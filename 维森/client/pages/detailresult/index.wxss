@@ -1,9 +1,9 @@
 /* pages/detailresult/index.wxss */
 
 .all {
-  position: fixed;
   background-color: whitesmoke;
   height: 100%;
+  width: 100%;
 }
 
 .eventName {
@@ -63,9 +63,10 @@
 }
 
 .eventOrg {
+  display: flex;
   font-size: small;
   margin: 0rpx 20rpx 15rpx 20rpx;
-  padding-bottom: 20rpx;
+  padding-bottom: 10rpx;
 }
 
 .thirdpart {
@@ -80,6 +81,14 @@
 }
 .textversion{
   padding-left: 30rpx;
-  padding-right: 20rpx;
+  padding-right: 10rpx;
   padding-bottom: 10rpx;
+  margin-right: 10rpx;
+}
+
+.collect{
+  left: 75%;
+  margin-bottom: 20rpx;
+  background-color:cornflowerblue;
+  color: white;
 }

@@ -1,5 +1,5 @@
 <!-- 我的设置页面 -->
-<view class="mine-wrapper" style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527779430554&di=d1dc5f2d861e73bc1d55528dd7cc1297&imgtype=0&src=http%3A%2F%2Fdown1.cnmo.com%2Fcnmo-app%2Fa199%2Fcaisexingkong.jpg');background-size: cover;">
+<view class="mine-wrapper" >
   <view class="avatar-wrapper">
     <view class="avatar">
       <image class="avatar-image" src="{{logged ? userInfo.avatarUrl : './user-unlogin.png'}}"></image>
@@ -9,15 +9,7 @@
       <text class="userinfo-nickname2" wx:else>{{userInfo.nickName}}</text>
     </view>
   </view>
-  <view wx:if="{{logged}}"class="sentence" bindtap='changeword'>
-    <text>与君共勉\n</text>
-    <text>{{requestResult.engsentence}}\n</text>
-    <text>{{requestResult.chsentence}}</text>
-  </view>
-  <view wx:else class="sentence">
-   <text>请先登录授权吧！</text>
-  </view>
-  <!-- <view class="my-project" id="0" style="background-color:{{backgroundcolor[0]}}" bindtouchstart='changeBackground' bindtouchend='toMyproject'>
+  <view class="my-project" id="0" style="background-color:{{backgroundcolor[0]}}" bindtouchstart='changeBackground' bindtouchend='toMyproject'>
     <view class="icon">
       <image class="project-image" src="../../images/icons/project.png"></image>
     </view>
@@ -32,5 +24,13 @@
     <view class="project">
       <text>我的订阅</text>
     </view>
-  </view> -->
+  </view> 
+  <view wx:if="{{logged}}"class="sentence" bindtap='changeword'>
+    <text>与君共勉\n</text>
+    <text>{{requestResult.engsentence}}\n</text>
+    <text>{{requestResult.chsentence}}</text>
+  </view>
+  <view wx:else class="sentence">
+   <text>请先登录授权吧！</text>
+  </view>
 </view>

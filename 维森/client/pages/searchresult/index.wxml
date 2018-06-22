@@ -1,6 +1,6 @@
 <!--pages/searchresult/index.wxml-->
 <view class="all">
-  <view class="weui-search-bar">
+  <view class="weui-search-bar" style="position:fixed; top:0;width: 750rpx;">
     <view class="weui-search-bar__form">
       <view class="weui-search-bar__box">
         <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
@@ -19,6 +19,9 @@
       <view class="searchResult" data-detail='{{item}}' bindtap='todetail'>
         <view class="eventName">
           <text>{{item.name}}</text>
+          <view wx:if="{{translated}}">
+            <text>译文:{{item.translateName}}</text>
+          </view>
         </view>
         <view class="eventcategory">
           <text class="bold">当前分类：</text>
@@ -47,6 +50,12 @@
     </view>
     <view>
       <text class="sorry">没登录的话先登录吧~</text>
+    </view>
+  </view>
+  <view class="translate" wx:if="{{requestResult[0]}}">
+    <text>翻译：</text>
+    <view class="body-view">
+      <switch color="cornflowerblue" checked bindchange="switchChange" />
     </view>
   </view>
 </view>
