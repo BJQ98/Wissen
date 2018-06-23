@@ -1,2 +1,44 @@
 <!--pages/mysubcribe/index.wxml-->
-<text>开发ing</text>
+<view class="all">
+  <view class="resultview" wx:if="{{requestResult[0]}}">
+    <block wx:for="{{requestResult}}">
+      <view class="searchResult" data-detail='{{item}}' bindtap='todetail'>
+        <view class="eventName">
+          <text>{{item.name}}</text>
+          <view wx:if="{{translated}}">
+            <text>译文:{{item.translateName}}</text>
+          </view>
+        </view>
+        <view class="eventcategory">
+          <text class="bold">当前分类：</text>
+          <text>{{item.category}}</text>
+        </view>
+        <view class="eventCountry">
+          <text class="bold">会议时间：</text>
+          <text>{{item.eventStart}}~{{item.eventEnd}}</text>
+        </view>
+        <view class="eventDate">
+          <text class="bold">举办国家：</text>
+          <text>{{item.eventCountry}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="fail" wx:else>
+    <view>
+      <icon type="warn" size="160" color="dodgerblue" />
+    </view>
+    <view>
+      <text class="sorry">正在努力加载~\n</text>
+    </view>
+    <view>
+      <text class="sorry">稍等一会吧⁎˃ᴗ˂⁎</text>
+    </view>
+  </view>
+  <view class="translate" wx:if="{{requestResult[0]}}">
+    <text>翻译：</text>
+    <view class="body-view">
+      <switch color="cornflowerblue" checked bindchange="switchChange" />
+    </view>
+  </view>
+</view>

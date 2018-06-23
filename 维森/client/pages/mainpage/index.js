@@ -17,6 +17,9 @@ Page({
       url: '../../pages/search/index'
     })
   },
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh()
+  },
   onLoad: function () {
     
   },

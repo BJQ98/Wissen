@@ -64,4 +64,7 @@ Page({
 	 */
 	onUnload: function () {
 	},
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh()
+  },
 })
