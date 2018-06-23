@@ -12,6 +12,7 @@ function randomWord() {
   // 随机产生
   var pos = Math.round(Math.random() * (arr.length - 1));
   str += arr[pos];
+  console.log(str)
   return str;
 }
 

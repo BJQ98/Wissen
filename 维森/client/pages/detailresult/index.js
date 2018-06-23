@@ -32,9 +32,9 @@ Page({
         keyword2: mode.ID
       },
       success(result) {
-        if (result.data.data == true){
+        if (result.data.data == true) {
           that.setData({
-            collected:true
+            collected: true
           })
         }
       },
@@ -119,7 +119,7 @@ Page({
   onShareAppMessage: function() {
 
   },
-  collect:function(){
+  collect: function() {
     qcloud.request({
       url: `${config.service.host}/weapp/collect`,
       data: {
@@ -135,10 +135,10 @@ Page({
       }
     })
     this.setData({
-      collected:true
+      collected: true
     })
   },
-  uncollect:function(){
+  uncollect: function() {
     qcloud.request({
       url: `${config.service.host}/weapp/delcollect`,
       data: {

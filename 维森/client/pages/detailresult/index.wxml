@@ -20,8 +20,8 @@
       <text>组织机构：</text>
       <text>{{resultValue.eventOrganiser}}</text>
     </view>
-      <button class="collect1" size="mini" bindtap="collect" wx:if="{{!collected}}">收藏</button>
-      <button class="collect2" size="mini" bindtap="uncollect" wx:else>已收藏</button>
+    <button class="collect1" size="mini" bindtap="collect" wx:if="{{!collected}}">收藏</button>
+    <button class="collect2" size="mini" bindtap="uncollect" wx:else>已收藏</button>
   </view>
   <view class="thirdpart">
     <view class="eventDescription">

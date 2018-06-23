@@ -12,9 +12,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000000",
     "navigationBarTitleText": "维森学术会议助手",
-    "navigationBarTextStyle": "white",
-    "enablePullDownRefresh": true
-  },
+    "navigationBarTextStyle": "white"
+      },
   "tabBar": {
     "color": "#000000",
     "selectedColor": "black",

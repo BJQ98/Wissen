@@ -6,10 +6,10 @@ var util = require('./utils/util.js')
 App({
   globalData: {
     userInfo: null,
-    translated:true
+    translated: true
   },
   onLaunch: function() {
-    var that=this
+    var that = this
     qcloud.setLoginUrl(config.service.loginUrl)
     qcloud.login({
       success(result) {
