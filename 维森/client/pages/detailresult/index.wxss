@@ -86,9 +86,15 @@
   margin-right: 10rpx;
 }
 
-.collect{
+.collect1{
   left: 75%;
   margin-bottom: 20rpx;
   background-color:cornflowerblue;
-  color: white;
+  color: black;
+}
+.collect2{
+  left: 75%;
+  margin-bottom: 20rpx;
+  background-color:white;
+  color: black;
 }

@@ -6,7 +6,9 @@ module.exports = async (ctx) => {
     user: ctx.query.keyword1,
     conferID: ctx.query.keyword2
   }
-  await mysql('collection').select('*').where('user', 123)
+  const iscollect = await mysql('collection').select('*').where(info);
+  if (!iscollect.length) {
+  await mysql('collection').insert(info)
     .then(res => {
       ctx.state.code = 0
       ctx.state.data = res
@@ -14,5 +16,8 @@ module.exports = async (ctx) => {
     .catch(err => {
       ctx.state.code = -1
       throw new Error(err)
-    })
+    })}
+    else{
+    ctx.state.data = true
+    }
 }

@@ -1,2 +1,40 @@
 <!--pages/myproject/index.wxml-->
-<text>开发ing</text>
+<view class="resultview" wx:if="{{requestResult[0]}}">
+    <block wx:for="{{requestResult}}">
+      <view class="searchResult" >
+        <view class="eventName" data-detail='{{item}}' bindtap='todetail'>
+          <text>{{item.name}}</text>
+          <view wx:if="{{translated}}">
+            <text>译文:{{item.translateName}}</text>
+          </view>
+        </view>
+        <view class="eventcategory">
+          <text class="bold">当前分类：</text>
+          <text>{{item.category}}</text>
+        </view>
+        <view class="eventCountry">
+          <text class="bold">会议时间：</text>
+          <text>{{item.eventStart}}~{{item.eventEnd}}</text>
+        </view>
+        <view class="eventDate">
+          <text class="bold">举办国家：</text>
+          <text>{{item.eventCountry}}</text>
+        </view>
+         <button data-detail='{{item}}' class="collect2" size="mini" bindtap="uncollect" >取消收藏</button>
+      </view>
+    </block>
+  </view>
+  <view class="fail" wx:else>
+    <view>
+      <icon type="warn" size="160" color="dodgerblue" />
+    </view>
+    <view>
+      <text class="sorry">暂时没有收藏哦~\n</text>
+    </view>
+    <view>
+      <text class="sorry">去搜索收藏看看吧(⁎˃ᴗ˂⁎)</text>
+    </view>
+    <view>
+      <text class="sorry">没登录的话先登录吧~</text>
+    </view>
+  </view>

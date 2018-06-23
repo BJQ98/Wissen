@@ -1,0 +1,15 @@
+const { mysql } = require('../qcloud')
+
+
+module.exports = async (ctx) => {
+  var value = ctx.query.keyword
+  await mysql('collection').select('*').where('user', value).select('conferID')
+    .then(res => {
+      ctx.state.code = 0
+      ctx.state.data = res
+    })
+    .catch(err => {
+      ctx.state.code = -1
+      throw new Error(err)
+    })
+}

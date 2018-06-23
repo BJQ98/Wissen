@@ -20,13 +20,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(globalData)
     var that = this
     var transdescription
     let modeEncode = options.resultValue
     let modeDecode = decodeURIComponent(modeEncode)
     let mode = JSON.parse(base64.decode(modeDecode))
-    if (mode.translated) {
+    qcloud.request({
+      url: `${config.service.host}/weapp/collect`,
+      data: {
+        keyword1: globalData.userInfo.openId,
+        keyword2: mode.ID
+      },
+      success(result) {
+        if (result.data.data == true){
+          that.setData({
+            collected:true
+          })
+        }
+      },
+      fail(error) {
+        util.showModel('请求失败', error);
+        console.log('request fail', error);
+      }
+    })
+    if (globalData.translated) {
       plugin.translate({
         lfrom: "en_US",
         lto: "zh_CN",
@@ -103,10 +120,27 @@ Page({
 
   },
   collect:function(){
-    console.log(globalData.userInfo.openId)
-    console.log(this.data.resultValue.ID)
     qcloud.request({
       url: `${config.service.host}/weapp/collect`,
+      data: {
+        keyword1: globalData.userInfo.openId,
+        keyword2: this.data.resultValue.ID
+      },
+      success(result) {
+        util.showSuccess('请求成功完成')
+      },
+      fail(error) {
+        util.showModel('请求失败', error);
+        console.log('request fail', error);
+      }
+    })
+    this.setData({
+      collected:true
+    })
+  },
+  uncollect:function(){
+    qcloud.request({
+      url: `${config.service.host}/weapp/delcollect`,
       data: {
         keyword1: globalData.userInfo.openId,
         keyword2: this.data.resultValue.ID
@@ -119,6 +153,9 @@ Page({
         util.showModel('请求失败', error);
         console.log('request fail', error);
       }
+    })
+    this.setData({
+      collected: false
     })
   }
 })

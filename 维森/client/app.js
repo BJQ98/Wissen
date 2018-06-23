@@ -5,7 +5,8 @@ var util = require('./utils/util.js')
 
 App({
   globalData: {
-    userInfo: null
+    userInfo: null,
+    translated:true
   },
   onLaunch: function() {
     var that=this
@@ -13,7 +14,6 @@ App({
     qcloud.login({
       success(result) {
         if (result) {
-          console.log(result)
           that.globalData.userInfo = result
 
         } else {

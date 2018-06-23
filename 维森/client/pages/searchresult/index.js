@@ -4,6 +4,8 @@ var qcloud = require('../../vendor/wafer2-client-sdk/index')
 var config = require('../../config')
 var util = require('../../utils/util.js')
 var base64 = require('../../utils/base64.js')
+var globalData = getApp().globalData
+
 
 
 Page({
@@ -12,17 +14,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    searchValue:'',
+    searchValue: '',
     requestResult: [],
-    translated:true
+    translated: true
   },
-  returnsearch:function(){
+  returnsearch: function() {
     wx.navigateBack()
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     this.setData({
       searchValue: options.searchValue
     });
@@ -35,8 +37,8 @@ Page({
       success(result) {
         util.showSuccess('请求成功完成')
         var tempdata = result.data.data
-        tempdata.sort(function (a, b) {
-          return a.eventStart < b.eventStart ? 1 : -1; 
+        tempdata.sort(function(a, b) {
+          return a.eventStart < b.eventStart ? 1 : -1;
         })
         that.setData({
           requestResult: tempdata
@@ -48,9 +50,9 @@ Page({
       }
     })
   },
-  todetail:function(e){
-    var that=this
-    var res=e.currentTarget.dataset.detail
+  todetail: function(e) {
+    var that = this
+    var res = e.currentTarget.dataset.detail
     res.translated = that.data.translated
     var result = JSON.stringify(res)
     let mode64 = base64.encode(result)
@@ -59,56 +61,57 @@ Page({
       url: '../detailresult/index?resultValue=' + modeEncode
     })
   },
-  switchChange:function(e){
+  switchChange: function(e) {
+    globalData.translated = e.detail.value
     this.setData({
       translated: e.detail.value
     })
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  },
-  
+  onReady: function() {},
+
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-  
+  onHide: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-  
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-  
+  onPullDownRefresh: function() {
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-  
+  onReachBottom: function() {
+
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function() {
+
   }
 })
