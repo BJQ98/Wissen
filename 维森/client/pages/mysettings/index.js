@@ -10,7 +10,7 @@ Page({
     requestResult:''
 	},
 
-	changeBackground: function (e) {
+	changeBackground: function (e) {//点击时改变颜色
 		let that = this;
 		let ids = e.currentTarget.id;
 		let changecolor = "backgroundcolor[" + ids + "]"
@@ -32,7 +32,7 @@ Page({
 	},
 
 
-  login: function () {
+  login: function () {//腾讯云登录函数，我也不大懂，下面的注释不是我写的
     if (this.data.logged) return
     var that = this
     // 调用登录接口
@@ -66,7 +66,7 @@ Page({
       },
     })
   },
-  bindGetUserInfo: function (e) {
+  bindGetUserInfo: function (e) {//同上
     if (this.data.logged) return;
 
     util.showBusy('正在登录');
@@ -189,7 +189,7 @@ Page({
 	onShareAppMessage: function () {
 
 	},
-  changeword:function(){
+  changeword:function(){//每次点击生成随机数，并请求后端
     var that = this
     var num = Math.random()
     num = Math.ceil(num * 112)
@@ -210,27 +210,7 @@ Page({
       }
     })
   },
-  changeword:function(){
-    var that = this
-    var num = Math.random()
-    num = Math.ceil(num * 112)
-    qcloud.request({
-      url: `${config.service.host}/weapp/word`,
-      data: {
-        id: num
-      },
-      success(result) {
-        that.setData({
-          requestResult: result.data.data[0]
-        })
-      },
-      fail(error) {
-        util.showModel('请求失败', error);
-        console.log('request fail', error);
-      }
-    })
-  },
-  onLoad: function (options) {
+  onLoad: function (options) {//打开页面也一样
     var that=this
     var num = Math.random()
     num = Math.ceil(num * 112)

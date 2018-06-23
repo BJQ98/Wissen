@@ -61,7 +61,7 @@ Page({
       url: '../detailresult/index?resultValue=' + modeEncode
     })
   },
-  switchChange: function(e) {
+  switchChange: function(e) {//点击翻译的switch按钮
     globalData.translated = e.detail.value
     this.setData({
       translated: e.detail.value

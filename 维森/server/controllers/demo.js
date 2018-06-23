@@ -3,7 +3,7 @@ const { mysql } = require('../qcloud')
 
 module.exports = async (ctx) => {
   var value = ctx.query.keyword
-  await mysql('new1').select('*').where('category', 'like', '%' + value + '%')
+  await mysql('new1').select('*').where('category', 'like', '%' + value + '%')//模糊查询
       .then(res => {
         ctx.state.code = 0
         ctx.state.data = res

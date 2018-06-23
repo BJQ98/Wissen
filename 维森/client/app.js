@@ -8,7 +8,7 @@ App({
     userInfo: null,
     translated: true
   },
-  onLaunch: function() {
+  onLaunch: function() {//登录先获取用户openid放到全局数据里面
     var that = this
     qcloud.setLoginUrl(config.service.loginUrl)
     qcloud.login({

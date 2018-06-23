@@ -16,7 +16,7 @@ Page({
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function (options) {
+	onLoad: function (options) {//打开页面先获取用户收藏的数据
     var that = this
     qcloud.request({
       url: `${config.service.host}/weapp/findcollect`,
@@ -24,12 +24,12 @@ Page({
         keyword: globalData.userInfo.openId,
       },
       success(result) {
-        var arr1 = result.data.data
+        var arr1 = result.data.data//所有的会议json数组
         var requestarr = []
         for (var i = 0; i < arr1.length; i++) {
           requestarr.push(arr1[i].conferID);
-        }
-        qcloud.request({
+        }//解析成会议ID数组，方便查询语句
+        qcloud.request({//请求中的请求，找到所有ID所对应的会议的详细信息
           url: `${config.service.host}/weapp/findconfer`,
           data: {
             keyword: requestarr
@@ -58,7 +58,7 @@ Page({
     res.translated = globalData.translated
     var result = JSON.stringify(res)
     let mode64 = base64.encode(result)
-    let modeEncode = encodeURIComponent(mode64)
+    let modeEncode = encodeURIComponent(mode64)//以上为页面间传递json防止特殊字符影响操作
     wx.navigateTo({
       url: '../detailresult/index?resultValue=' + modeEncode
     })
@@ -73,7 +73,7 @@ Page({
 	/**
 	 * 生命周期函数--监听页面显示
 	 */
-	onShow: function () {
+	onShow: function () {//每次显示页面时刷新收藏的数据，因为通过该页面点进去找到详细信息后，取消收藏返回该页面时做出反应
     var that = this
     qcloud.request({
       url: `${config.service.host}/weapp/findcollect`,
@@ -143,7 +143,7 @@ Page({
 	onShareAppMessage: function () {
 
 	},
-  uncollect: function (e) {
+  uncollect: function (e) {//直接在该页面取消收藏，e为按钮上绑定的事件，可以获取该一条会议的数据，主要获取ID来进行删除
     var that=this
     console.log(e.currentTarget.dataset.detail)
     var id = e.currentTarget.dataset.detail.ID

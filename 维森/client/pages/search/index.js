@@ -11,7 +11,7 @@ Page({
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function (options) {
+	onLoad: function (options) {//一开始不懂套用的模板
 		var that = this;
 		WxSearch.init(
 			that,  // 本页面一个引用
