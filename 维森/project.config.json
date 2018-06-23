@@ -10,5 +10,7 @@
 		"minified": true,
 		"newFeature": true
 	},
+	"appid": "wx98981bce778dec08",
+	"projectname": "wissen",
 	"condition": {}
 }
