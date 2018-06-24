@@ -40,6 +40,9 @@ page {
   width: 680rpx;
   background: #ffffff;
   border-bottom: solid 1px #ebebeb;
+  padding-left: 0rpx;
+  padding-top:20rpx;
+  padding-right:20rpx; 
 }
 .notify-item  image{
   width: 80rpx;
