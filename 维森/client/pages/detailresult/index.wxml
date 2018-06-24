@@ -36,8 +36,8 @@
       <text class="blueborder">会议摘要：\n</text>
     </view>
     <view class="textversion">
-      <text>{{resultValue.eventDescription}}\n</text>
-      <text>{{transDescription}}</text>
+      <text>{{resultValue.eventDescription}}\n\n</text>
+      <text>译文：{{transDescription}}</text>
     </view>
   </view>
 </view>

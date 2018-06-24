@@ -193,7 +193,9 @@ Page({
     var that = this
     var num = Math.random()
     num = Math.ceil(num * 112)
-    if (!this.data.logged) 
+    if (!this.data.logged){
+      return
+    }
     qcloud.request({
       url: `${config.service.host}/weapp/word`,
       data: {

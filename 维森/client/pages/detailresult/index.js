@@ -25,6 +25,7 @@ Page({
     let modeEncode = options.resultValue
     let modeDecode = decodeURIComponent(modeEncode)
     let mode = JSON.parse(base64.decode(modeDecode))//这一串操作为了页面间传递json数据，防止特殊字符影响传递
+    //console.log(mode.eventStart.slice(0,10))
     qcloud.request({//请求该用户对这条会议的收藏与否
       url: `${config.service.host}/weapp/collect`,
       data: {

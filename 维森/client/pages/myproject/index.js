@@ -35,8 +35,13 @@ Page({
             keyword: requestarr
           },
           success(res) {
+            var tempdata = res.data.data
+            for (var i = 0; i < tempdata.length; i++) {
+              tempdata[i].eventStart = tempdata[i].eventStart.slice(0, 10)
+              tempdata[i].eventEnd = tempdata[i].eventEnd.slice(0, 10)
+            }
             that.setData({
-              requestResult: res.data.data
+              requestResult:tempdata
             })
           },
           fail(error) {
@@ -92,8 +97,13 @@ Page({
             keyword: requestarr
           },
           success(res) {
+            var tempdata = res.data.data
+            for (var i = 0; i < tempdata.length; i++) {
+              tempdata[i].eventStart = tempdata[i].eventStart.slice(0, 10)
+              tempdata[i].eventEnd = tempdata[i].eventEnd.slice(0, 10)
+            }
             that.setData({
-              requestResult: res.data.data
+              requestResult: tempdata
             })
           },
           fail(error) {
@@ -172,8 +182,13 @@ Page({
                 keyword: requestarr
               },
               success(res) {
+                var tempdata = res.data.data
+                for (var i = 0; i < tempdata.length; i++) {
+                  tempdata[i].eventStart = tempdata[i].eventStart.slice(0, 10)
+                  tempdata[i].eventEnd = tempdata[i].eventEnd.slice(0, 10)
+                }
                 that.setData({
-                  requestResult: res.data.data
+                  requestResult: tempdata
                 })
               },
               fail(error) {

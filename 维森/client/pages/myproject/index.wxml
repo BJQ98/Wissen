@@ -9,16 +9,16 @@
           </view>
         </view>
         <view class="eventcategory">
-          <text class="bold">当前分类：</text>
+          <text class="bold">会议类型：</text>
           <text>{{item.category}}</text>
         </view>
         <view class="eventCountry">
-          <text class="bold">会议时间：</text>
-          <text>{{item.eventStart}}~{{item.eventEnd}}</text>
-        </view>
-        <view class="eventDate">
           <text class="bold">举办国家：</text>
           <text>{{item.eventCountry}}</text>
+        </view>
+        <view class="eventDate">
+          <text class="bold">与会专家：</text>
+          <text>{{item.contactPerson}}</text>
         </view>
          <button data-detail='{{item}}' class="collect2" size="mini" bindtap="uncollect" >取消收藏</button>
       </view>

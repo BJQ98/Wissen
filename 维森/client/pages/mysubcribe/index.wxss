@@ -8,10 +8,6 @@ page {
   width: 100%;
 }
 
-.fail {
-  margin-top: 110rpx;
-}
-
 .searchResult {
   background-color: white;
   margin: 10rpx 10rpx 15rpx 10rpx;
@@ -26,8 +22,7 @@ page {
 }
 
 .resultview {
-  margin-top: 30rpx;
-  margin-bottom: 110rpx;
+  margin-top: 10rpx;
 }
 
 .eventName {
