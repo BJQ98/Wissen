@@ -164,7 +164,6 @@ Page({
         keyword2: id
       },
       success(result) {
-        util.showSuccess('请求成功完成')
         qcloud.request({
           url: `${config.service.host}/weapp/findcollect`,
           data: {

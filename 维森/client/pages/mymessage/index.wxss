@@ -1,0 +1,72 @@
+page {
+  width: 100%;
+  background-color: whitesmoke;
+}
+.all {
+  height: 100%;
+  width: 100%;
+}
+.ctnt0 {
+  background-color: white;
+  margin: 10rpx 10rpx 15rpx 10rpx;
+  border-bottom-color: #d7d6dc;
+  border-bottom-style: groove;
+  /* border-left-style: groove;
+  border-top-style: groove; */
+  border-right-style: groove;
+  padding-left: 20rpx;
+  padding-top: 20rpx;
+  padding-right: 20rpx;
+}
+.unread{
+  color: #9A9C9B;
+  height: 60rpx;
+  text-align: left;
+  width: 670rpx;
+}
+.unread text{
+  display: inline-block;
+  line-height: 60rpx;
+  font-size: 24rpx;
+}
+.unread image{
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+  float: right;
+}
+.notify-item{
+  width: 680rpx;
+  background: #ffffff;
+  border-bottom: solid 1px #ebebeb;
+}
+.notify-item  image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+}
+.notify-item .avatar{
+  flex: 1;
+}
+.notify-item .notify-content{
+  flex: 4;
+  text-align: left;
+}
+.notify-item .notify-content text{
+  display: block;
+}
+.notify-item .notify-content .notify-source{
+  color: #818A8F;
+  font-size: 34rpx;
+  padding: 0 0 8rpx 0;
+}
+.notify-item .notify-content .notify-title{
+  color: #AFAFAF;
+  font-size: 30rpx;
+  line-height: 34rpx;
+}
+.placehold{
+  padding: 80rpx 0;
+  font-size: 28rpx
+}

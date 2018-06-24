@@ -13,7 +13,8 @@ Page({
   data: {
     collected: false,//该会议是否被收藏
     resultValue: [],//服务端返回的会议的信息
-    transDescription: ''//会议摘要的翻译
+    transDescription: '',//会议摘要的翻译
+    translated:''
   },
 
   /**
@@ -54,7 +55,8 @@ Page({
             transdescription = res.result
             that.setData({//翻译成功，设置页面的值，因为翻译比较慢，所以会有延迟
               resultValue: mode,
-              transDescription: transdescription
+              transDescription: transdescription,
+              translated:true
             })
 
           } else {
@@ -68,6 +70,7 @@ Page({
     } else {
       that.setData({
         resultValue: mode,
+        translated:false
       })
     }
   },
@@ -128,7 +131,7 @@ Page({
         keyword2: this.data.resultValue.ID
       },
       success(result) {
-        util.showSuccess('请求成功完成')
+        util.showSuccess('收藏成功')
       },
       fail(error) {
         util.showModel('请求失败', error);
@@ -148,7 +151,7 @@ Page({
       },
       success(result) {
         console.log(result)
-        util.showSuccess('请求成功完成')
+        util.showSuccess('取消收藏成功')
       },
       fail(error) {
         util.showModel('请求失败', error);

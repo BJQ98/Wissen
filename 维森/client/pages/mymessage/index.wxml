@@ -1,0 +1,29 @@
+<!--logs.wxml-->
+<scroll-view scroll-y="true" class="container notify withtab" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <view class="ctnt0">
+    <view class="unread">
+      <text>0 条未读</text>
+      <image src="../../images/icons/allread.png"></image>
+    </view>
+    
+    <view class="notify-item flex-wrp">
+      <view class="avatar flex-item">
+        <image src="../../images/icons/icon1.jpeg"></image>
+      </view>
+      <view class="notify-content flex-item">
+        <text class="notify-source">维森学术会议助手</text>
+        <text class="notify-title">欢迎来到维森学术会议助手！您将在这里获得最新的科研会议咨询。</text>
+      </view>
+    </view>
+    <view class="notify-item flex-wrp">
+      <view class="avatar flex-item">
+        <image src="../../images/icons/icon1.jpeg"></image>
+      </view>
+      <view class="notify-content flex-item">
+        <text class="notify-source">维森学术会议助手</text>
+        <text class="notify-title">欢迎来到维森学术会议助手！您将在这里获得最新的科研会议咨询。</text>
+      </view>
+    </view>
+
+  </view>
+</scroll-view>

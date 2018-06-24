@@ -55,7 +55,7 @@
   <view class="translate" wx:if="{{requestResult[0]}}">
     <text>翻译：</text>
     <view class="body-view">
-      <switch color="cornflowerblue" checked bindchange="switchChange" />
+      <switch color="cornflowerblue" checked="{{translated}}" bindchange="switchChange" />
     </view>
   </view>
 </view>

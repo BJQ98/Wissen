@@ -37,7 +37,7 @@
     </view>
     <view class="textversion">
       <text>{{resultValue.eventDescription}}\n\n</text>
-      <text>译文：{{transDescription}}</text>
+      <text wx:if="{{translated}}">译文：{{transDescription}}</text>
     </view>
   </view>
 </view>

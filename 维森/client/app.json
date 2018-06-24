@@ -6,7 +6,8 @@
     "pages/myproject/index",
     "pages/mysubcribe/index",
     "pages/searchresult/index",
-    "pages/detailresult/index"
+    "pages/detailresult/index",
+    "pages/mymessage/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

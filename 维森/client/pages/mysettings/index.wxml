@@ -25,6 +25,14 @@
       <text>随便逛逛</text>
     </view>
   </view> 
+    <view class="my-project" id="2" style="background-color:{{backgroundcolor[2]}}" bindtouchstart='changeBackground' bindtouchend='toMymessage'>
+    <view class="icon">
+      <image class="project-image" src="../../images/icons/message.png"></image>
+    </view>
+    <view class="project">
+      <text>我的消息</text>
+    </view>
+  </view> 
   <view wx:if="{{logged}}"class="sentence" bindtap='changeword'>
     <text>与君共勉\n</text>
     <text>{{requestResult.engsentence}}\n</text>

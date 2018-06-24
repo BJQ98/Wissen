@@ -16,7 +16,7 @@ Page({
   data: {
     searchValue: '',
     requestResult: [],
-    translated: true
+    translated: globalData.translated
   },
   returnsearch: function() {
     wx.navigateBack()
@@ -26,7 +26,8 @@ Page({
    */
   onLoad: function(options) {
     this.setData({
-      searchValue: options.searchValue
+      searchValue: options.searchValue,
+      translated:globalData.translated
     });
     var that = this
     qcloud.request({
@@ -81,7 +82,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    this.setData({
+      translated: globalData.translated
+    })
   },
 
   /**
