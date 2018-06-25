@@ -1,4 +1,8 @@
 // pages/mysubmit/index.js
+var util = require('../../utils/util.js')
+
+
+
 Page({
 
   /**
@@ -13,6 +17,9 @@ Page({
       wx.redirectTo({
         url: '../submitresult/index?resultValue=' + e.detail.value.input
       })
+    }
+    else{
+      util.showModel('提交失败', '请输入您的反馈')
     }
   },
   /**
@@ -32,7 +39,6 @@ Page({
     var value = e.detail.value,
       len = parseInt(value.length);
     if (len > this.data.noteMaxLen) return;
-
     this.setData({
       currentNoteLen: len //当前字数  
     });

@@ -162,7 +162,6 @@ Page({
         keyword2: this.data.resultValue.ID
       },
       success(result) {
-        console.log(result)
         util.showSuccess('取消收藏成功')
       },
       fail(error) {

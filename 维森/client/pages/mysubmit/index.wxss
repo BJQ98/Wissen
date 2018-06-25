@@ -1,5 +1,6 @@
 /* pages/mysubmit/index.wxss */
-.box{
+
+.box {
   padding: 10rpx;
   height: 430rpx;
 }
@@ -19,11 +20,8 @@
   color: gray;
 }
 
-
-
-
-.btn{
-  margin-top: 40rpx;
-    margin-left: 60rpx;
+.btn {
+  margin-top: 140rpx;
+  margin-left: 60rpx;
   margin-right: 60rpx;
 }

@@ -47,7 +47,6 @@ Page({
         for (var i=0;i<tempdata.length;i++){
           tempdata[i].eventStart = tempdata[i].eventStart.slice(0,10)
           tempdata[i].eventEnd = tempdata[i].eventEnd.slice(0, 10)
-
           var end_date = new Date(tempdata[i].eventEnd.replace(/-/g, "/"))
           var days = end_date.getTime() - time.getTime()
           var day = parseInt(days / (1000 * 60 * 60 * 24))

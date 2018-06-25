@@ -12,7 +12,7 @@
     <text>或者点击下方按钮联系和反馈我们\n</text>
   </view>
   <view class="btn">
-    <button bindtap="toSubmit">联系我们</button>
+    <button bindtap="toSubmit">提交反馈</button>
   </view>
 
 </view>

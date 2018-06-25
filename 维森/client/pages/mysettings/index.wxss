@@ -1,6 +1,6 @@
 .avatar-wrapper {
   display: flex;
-  background:white;
+  background: white;
 }
 
 .avatar-wrapper .avatar .avatar-image {
@@ -12,30 +12,32 @@
 .avatar-wrapper .avatar {
   width: 160rpx;
   height: 160rpx;
-  padding:20rpx;
+  padding: 20rpx;
 }
 
 .mine-wrapper {
   position: fixed;
   height: 100%;
   width: 100%;
-  background-color: lightgray;
+  background-color: whitesmoke;
 }
 
 .avatar-wrapper .nickname .userinfo-nickname2 {
   color: gray;
 }
+
 .avatar-wrapper .nickname .userinfo-nickname1 {
   border-color: gray;
   color: gray;
 }
+
 .avatar-wrapper .nickname {
   height: 100%;
   width: 100%;
   display: flex;
   font-size: 150%;
   color: gray;
-  padding:40rpx;
+  padding: 40rpx;
 }
 
 .my-project {
@@ -60,11 +62,18 @@
   margin-left: 20rpx;
   margin-top: 5rpx;
 }
-.sentence{
-  border-color: white;
-  border-style: solid;
-  border-width: 10rpx;
-  color:white;
+
+.sentence {
+  color: gray;
   padding: 20rpx;
-  margin-top:30rpx;
+  margin-top: 25rpx;
+}
+
+.version {
+  position: fixed;
+  bottom: 30rpx;
+  font-size: 25rpx;
+  color: lightgray;
+  display: flex;
+  left: 300rpx;
 }

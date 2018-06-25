@@ -42,11 +42,13 @@
     </view>
   </view>
   <view wx:if="{{logged}}" class="sentence" bindtap='changeword'>
-    <text>与君共勉\n</text>
+    <text>与君共勉\n\n</text>
     <text>{{requestResult.engsentence}}\n</text>
-    <text>{{requestResult.chsentence}}</text>
   </view>
   <view wx:else class="sentence">
     <text>请先登录授权吧！</text>
+  </view>
+  <view class="version">
+    <text>当前版本：1.8.3</text>
   </view>
 </view>
