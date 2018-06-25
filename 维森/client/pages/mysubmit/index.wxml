@@ -1,0 +1,12 @@
+<!--pages/mysubmit/index.wxml-->
+<form bindsubmit="formSubmit" >  
+    <view >  
+      <view class="area-box">  
+        <textarea class="box" name="input" placeholder="您的建议和意见是我们前进最好的动力！" maxlength="{{noteMaxLen}}" bindinput="bindWordLimit" />  
+        <text class="wordLimit">{{currentNoteLen|0}}/{{noteMaxLen}}个字</text>  
+      </view>  
+    </view>  
+    <view class="btn">  
+      <button formType="submit">提交</button>
+    </view>  
+</form>  

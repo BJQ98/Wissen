@@ -1,0 +1,29 @@
+/* pages/mysubmit/index.wxss */
+.box{
+  padding: 10rpx;
+  height: 430rpx;
+}
+
+.area-box {
+  border: 4rpx solid gray;
+  /*边界角的弧度*/
+  border-radius: 20rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-top: 60rpx;
+  height: 500rpx;
+}
+
+.wordLimit {
+  margin-left: 460rpx;
+  color: gray;
+}
+
+
+
+
+.btn{
+  margin-top: 40rpx;
+    margin-left: 60rpx;
+  margin-right: 60rpx;
+}

@@ -1,0 +1,16 @@
+<!--pages/submitresult/index.wxml-->
+<view class="fail">
+  <view>
+    <icon type="success" size="160" color="dodgerblue" />
+  </view>
+  <view>
+    <text class="sorry">感谢您的支持~</text>
+  </view>
+  <view>
+    <text class="sorry">我们会加倍努力！</text>
+  </view>
+
+</view>
+<view class="btn">
+  <button bindtap="returntomain">返回</button>
+</view>

@@ -1,0 +1,20 @@
+/* pages/submitresult/index.wxss */
+.fail {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*垂直居中*/
+  top: 10%;
+}
+
+.sorry {
+  font-size: larger;
+  color: darkgray;
+}
+.btn{
+  margin-top: 760rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}

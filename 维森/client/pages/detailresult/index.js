@@ -5,7 +5,20 @@ var globalData = getApp().globalData
 var qcloud = require('../../vendor/wafer2-client-sdk/index')
 var config = require('../../config')
 var util = require('../../utils/util.js')
-
+function num_data(e) {
+  console.log(e)
+  var start_date = new Date(e.eventStart.replace(/-/g, "/"));
+  var end_date = new Date(e.eventEnd.replace(/-/g, "/"));
+  var days = end_date.getTime() - start_date.getTime();
+  var day = parseInt(days / (1000 * 60 * 60 * 24));
+  if (day > 0) {
+    console.log(day)
+  } else {
+    wx.showToast({
+      title: '日期有误',
+    })
+  }
+}
 Page({
   /**
    * 页面的初始数据
@@ -16,7 +29,6 @@ Page({
     transDescription: '',//会议摘要的翻译
     translated:''
   },
-
   /**
    * 生命周期函数--监听页面加载
    */

@@ -4,7 +4,7 @@ var util = require('../../utils/util.js')
 
 Page({
 	data: {
-		backgroundcolor: ['white', 'white', 'white'],
+		backgroundcolor: ['white', 'white', 'white','white'],
 		userInfo: {},
     logged: false,
     requestResult:''
@@ -19,11 +19,15 @@ Page({
 		})
 	},
 	toMyproject: function () {
-		let that = this;
 		wx.navigateTo({
 			url: '../../pages/myproject/index',
 		})
 	},
+  toAboutUs: function () {
+    wx.navigateTo({
+      url: '../../pages/aboutus/index',
+    })
+  },
   toMymessage: function () {
     let that = this;
     wx.navigateTo({

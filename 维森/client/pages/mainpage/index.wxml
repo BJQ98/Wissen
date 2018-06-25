@@ -1,8 +1,8 @@
 <!-- 主页页面 -->
 <view class="container">
-  <image class="background" src="../../images/background/universe.jpeg" mode="scaleToFill"></image>
+  <image class="background" src="../../images/background/universe3.jpg" mode="scaleToFill"></image>
   <view class="Font">
-    <text>Wissen</text>
+    <text></text>
   </view>
   <view class="weui-search-bar__form" bindtap='toSearch'>
     <view class="weui-search-bar__box">

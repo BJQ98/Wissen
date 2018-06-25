@@ -1,0 +1,29 @@
+/* pages/aboutus/index.wxss */
+
+page {
+  background-color: whitesmoke;
+}
+
+.background {
+  height: 350rpx;
+  width: 100%;
+}
+
+.ourInfo {
+  background-color: white;
+  margin-top: 20rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-bottom: 10rpx;
+  padding-top: 10rpx;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.btn{
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  margin-top: 60rpx;
+}

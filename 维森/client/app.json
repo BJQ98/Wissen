@@ -7,7 +7,10 @@
     "pages/mysubcribe/index",
     "pages/searchresult/index",
     "pages/detailresult/index",
-    "pages/mymessage/index"
+    "pages/mymessage/index",
+    "pages/aboutus/index",
+    "pages/mysubmit/index",
+    "pages/submitresult/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

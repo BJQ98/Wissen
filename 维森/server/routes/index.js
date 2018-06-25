@@ -39,5 +39,6 @@ router.get('/collect', controllers.collect)
 router.get('/findcollect', controllers.findcollect)
 router.get('/findconfer', controllers.findconfer)
 router.get('/delcollect', controllers.delcollect)
+router.get('/addadvice', controllers.addadvice)
 
 module.exports = router

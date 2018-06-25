@@ -1,0 +1,18 @@
+<!--pages/aboutus/index.wxml-->
+<view class="all">
+  <view>
+    <image class="background" src="../../images/background/aboutus.jpg"></image>
+  </view>
+  <view class="ourInfo">
+    <text class="title">维森学术会议助手(Wissen)</text>
+    <text>旨在为有科研需要的人群提供一个便捷浏览各领域学术会议信息的平台，为广大科研工作者提供国际学术会议的信息，包括各会议的名称、官网、征文和参会专家等。\n</text>
+    <text>该项目的主要开发人员为上海大学计算机学院的大二本科生，我们的开发经验可能不是很丰富，所以希望用户能够在使用的同时指出我们的不足之处，或者加入到我们的开发队列中来。\n</text>
+    <text>如果需要发布会议信息或者加入我们，请联系：</text>
+    <text selectable='true'>249961086@qq.com\n</text>
+    <text>或者点击下方按钮联系和反馈我们\n</text>
+  </view>
+  <view class="btn">
+    <button bindtap="toSubmit">联系我们</button>
+  </view>
+
+</view>
