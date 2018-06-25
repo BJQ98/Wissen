@@ -109,6 +109,7 @@ page {
   padding-left: 20rpx;
   padding-top: 20rpx;
   padding-right: 20rpx;
+  color: black;
 }
 
 .resultview {
@@ -116,7 +117,15 @@ page {
   margin-bottom: 110rpx;
 }
 
-.eventName {
+.class1{
+  color:#9b9b9b;
+}
+
+.class2{
+  color:black;
+}
+
+.eventName{
   font-weight: bold;
   padding-bottom: 15rpx;
   border-bottom-style: dashed;
@@ -124,16 +133,29 @@ page {
   border-bottom-color: gray;
 }
 
+
 .eventcategory {
   font-size: small;
   margin-bottom: 7rpx;
   margin-top: 7rpx;
 }
 
-.eventCountry {
+.eventCountry1 {
   font-size: small;
   margin-bottom: 7rpx;
+  color:#fd9494;
 }
+
+.eventCountry2 {
+  font-size: small;
+  margin-bottom: 7rpx;
+  color:black;
+}
+
+/*
+.eventCountry text {
+  color: #fd9494;
+}*/
 
 .eventDate {
   margin-bottom: 30rpx;

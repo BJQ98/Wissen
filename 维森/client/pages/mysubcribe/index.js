@@ -126,10 +126,10 @@ Page({
       success(result) {
         util.showSuccess('刷新成功！')
         var tempdata = result.data.data
-        /*
+        
         tempdata.sort(function (a, b) {
           return a.eventStart < b.eventStart ? 1 : -1;
-        })*/
+        })
         for (var i = 0; i < tempdata.length; i++) {
           tempdata[i].eventStart = tempdata[i].eventStart.slice(0, 10)
           tempdata[i].eventEnd = tempdata[i].eventEnd.slice(0, 10)

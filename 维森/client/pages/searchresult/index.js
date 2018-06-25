@@ -16,7 +16,8 @@ Page({
   data: {
     searchValue: '',
     requestResult: [],
-    translated: globalData.translated
+    translated: globalData.translated,
+    time:0
   },
   returnsearch: function() {
     wx.navigateBack()
@@ -25,9 +26,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    var time = new Date(); 
     this.setData({
       searchValue: options.searchValue,
-      translated:globalData.translated
+      translated:globalData.translated,
+      time: time
     });
     var that = this
     qcloud.request({
@@ -44,6 +47,15 @@ Page({
         for (var i=0;i<tempdata.length;i++){
           tempdata[i].eventStart = tempdata[i].eventStart.slice(0,10)
           tempdata[i].eventEnd = tempdata[i].eventEnd.slice(0, 10)
+
+          var end_date = new Date(tempdata[i].eventEnd.replace(/-/g, "/"))
+          var days = end_date.getTime() - time.getTime()
+          var day = parseInt(days / (1000 * 60 * 60 * 24))
+          if(day>0){
+            tempdata[i].isExpired=false
+          }else{
+            tempdata[i].isExpired = true
+          }
         }
         that.setData({
           requestResult: tempdata
