@@ -1,29 +1,32 @@
 <!--logs.wxml-->
-<scroll-view scroll-y="true" class="container notify withtab" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+<view wx:if="{{message[0]}}" class="container notify withtab">
   <view class="ctnt0">
-    <view class="unread">
-      <text>0 条未读</text>
-      <image src="../../images/icons/allread.png"></image>
-    </view>
-    
-    <view class="notify-item flex-wrp">
-      <view class="avatar flex-item">
-        <image src="../../images/icons/icon1.jpeg"></image>
+    <block wx:for="{{message}}">
+      <view data-detail='{{item}}' bindtap='todetail'>
+        <view class="notify-item flex-wrp">
+          <view class="avatar flex-item">
+            <image src="../../images/icons/icon1.jpeg"></image>
+          </view>
+          <view class="notify-content flex-item">
+            <text class="notify-source">会议临近通知！</text>
+            <text class="notify-title">你有一个收藏的会议将在{{item.day}}天后举行！</text>
+          </view>
+        </view>
       </view>
-      <view class="notify-content flex-item">
-        <text class="notify-source">维森学术会议助手</text>
-        <text class="notify-title">欢迎来到维森学术会议助手！您将在这里获得最新的科研会议咨询。</text>
-      </view>
-    </view>
-    <view class="notify-item flex-wrp">
-      <view class="avatar flex-item">
-        <image src="../../images/icons/icon1.jpeg"></image>
-      </view>
-      <view class="notify-content flex-item">
-        <text class="notify-source">维森学术会议助手</text>
-        <text class="notify-title">欢迎来到维森学术会议助手！您将在这里获得最新的科研会议咨询。</text>
-      </view>
-    </view>
-
+    </block>
   </view>
-</scroll-view>
+</view>
+<view class="fail" wx:else>
+  <view>
+    <icon type="warn" size="160" color="dodgerblue" />
+  </view>
+  <view>
+    <text class="sorry">暂时没有消息哦~\n</text>
+  </view>
+  <view>
+    <text class="sorry">我们会在您收藏的会议\n</text>
+  </view>
+  <view>
+    <text class="sorry">临近第一时间通知您~</text>
+  </view>
+</view>

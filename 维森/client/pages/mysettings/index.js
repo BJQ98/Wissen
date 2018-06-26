@@ -1,13 +1,19 @@
 var qcloud = require('../../vendor/wafer2-client-sdk/index')
 var config = require('../../config')
 var util = require('../../utils/util.js')
+var globalData = getApp().globalData
+var base64 = require('../../utils/base64.js')
+
+
 
 Page({
 	data: {
 		backgroundcolor: ['white', 'white', 'white','white'],
 		userInfo: {},
     logged: false,
-    requestResult:''
+    requestResult:'',
+    isread:true,
+    messagelist:[]
 	},
 
 	changeBackground: function (e) {//点击时改变颜色
@@ -29,9 +35,18 @@ Page({
     })
   },
   toMymessage: function () {
+    wx.removeTabBarBadge({
+      index:1
+    })
+    this.setData({
+      isread:true
+    })
     let that = this;
+    var result = JSON.stringify(that.data.messagelist)
+    let mode64 = base64.encode(result)
+    let modeEncode = encodeURIComponent(mode64)
     wx.navigateTo({
-      url: '../../pages/mymessage/index',
+      url: '../mymessage/index?resultValue=' + modeEncode
     })
   },
 	toMysubscribe: function () {
@@ -66,7 +81,6 @@ Page({
                 logged: true
               })
             },
-
             fail(error) {
               util.showModel('请求3失败', error)
               console.log('request fail', error)
@@ -168,7 +182,7 @@ Page({
 	 */
 	onHide: function () {
 		this.setData({
-			backgroundcolor: ['white', 'white'],
+			backgroundcolor: ['white', 'white', 'white', 'white'],
 		})
 	},
 
@@ -223,6 +237,7 @@ Page({
     })
   },
   onLoad: function (options) {//打开页面也一样
+    var time = new Date();
     var that=this
     var num = Math.random()
     num = Math.ceil(num * 112)
@@ -238,7 +253,55 @@ Page({
         })
       },
       fail(error) {
-        util.showModel('请求失败', error);
+        console.log('request fail', error);
+      }
+    })
+    qcloud.request({//找到所有收藏项目
+      url: `${config.service.host}/weapp/findcollect`,
+      data: {
+        keyword: globalData.userInfo.openId,
+      },
+      success(result) {
+        var arr1 = result.data.data//所有的会议json数组
+        var requestarr = []
+        for (var i = 0; i < arr1.length; i++) {
+          requestarr.push(arr1[i].conferID);
+        }//解析成会议ID数组，方便查询语句
+        qcloud.request({//请求中的请求，找到所有ID所对应的会议的详细信息
+          url: `${config.service.host}/weapp/findconfer`,
+          data: {
+            keyword: requestarr
+          },
+          success(res) {
+            var tempdata = res.data.data
+            var message=[]
+            for (var i = 0; i < tempdata.length; i++) {
+              tempdata[i].eventStart = tempdata[i].eventStart.slice(0, 10)
+              var start_date = new Date(tempdata[i].eventStart.replace(/-/g, "/"))
+              var days = start_date.getTime() - time.getTime()
+              var day = parseInt(days / (1000 * 60 * 60 * 24))
+              if(day==30||day==10||day==3||day==1){
+                message.push(tempdata[i])
+              }
+            }
+            if(message.length>0){
+              that.setData({
+                messagelist:message,
+                isread:false
+              })
+              wx.setTabBarBadge({
+                index: 1,
+                text:message.length.toString()
+              })
+            }
+          },
+          fail(error) {
+            console.log('request fail', error);
+          }
+        })
+        util.showSuccess('请求成功完成')
+      },
+      fail(error) {
         console.log('request fail', error);
       }
     })

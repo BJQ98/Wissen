@@ -7,7 +7,6 @@ var base64 = require('../../utils/base64.js')
 var globalData = getApp().globalData
 
 
-
 Page({
 
   /**

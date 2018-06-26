@@ -6,7 +6,6 @@ var qcloud = require('../../vendor/wafer2-client-sdk/index')
 var config = require('../../config')
 var util = require('../../utils/util.js')
 function num_data(e) {
-  console.log(e)
   var start_date = new Date(e.eventStart.replace(/-/g, "/"));
   var end_date = new Date(e.eventEnd.replace(/-/g, "/"));
   var days = end_date.getTime() - start_date.getTime();
