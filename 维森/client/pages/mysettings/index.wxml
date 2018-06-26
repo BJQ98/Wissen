@@ -5,7 +5,7 @@
       <image class="avatar-image" src="{{logged ? userInfo.avatarUrl : './user-unlogin.png'}}"></image>
     </view>
     <view class="nickname">
-      <button bindtap="login" class="userinfo-nickname1" wx:if="{{!logged}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" plain="true">点击授权</button>
+      <button class="userinfo-nickname1" wx:if="{{!logged}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" plain="true">点击授权</button>
       <text class="userinfo-nickname2" wx:else>{{userInfo.nickName}}</text>
     </view>
   </view>
