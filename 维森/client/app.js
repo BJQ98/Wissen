@@ -37,6 +37,9 @@ App({
               if (day == 30 || day == 10 || day == 3 || day == 1) {
                 message.push(tempdata[i])
               }
+              if(day<=30&&day>=0&&tempdata[i].hasChange){
+                message.push(tempdata[i])
+              }
             }
             if (message.length > 0) {
               wx.setTabBarBadge({

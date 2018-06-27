@@ -96,7 +96,9 @@ Page({
     })
   },
   bindGetUserInfo: function(e) { //同上
-    if (this.data.logged) {return};
+    if (this.data.logged) {
+      return
+    };
     util.showBusy('正在登录');
     var that = this;
     var userInfo = e.detail.userInfo;
@@ -240,7 +242,7 @@ Page({
     })
   },
   onLoad: function(options) { //打开页面也一样
-  this.login()
+    this.login()
     var time = new Date();
     var that = this
     var num = Math.random()
@@ -292,15 +294,14 @@ Page({
               if (day == 30 || day == 10 || day == 3 || day == 1) {
                 message.push(tempdata[i])
               }
+              if (day <= 30 && day >= 0 && tempdata[i].hasChange) {
+                message.push(tempdata[i])
+              }
             }
             if (message.length > 0) {
               that.setData({
                 messagelist: message,
                 isread: false
-              })
-              wx.setTabBarBadge({
-                index: 1,
-                text: message.length.toString()
               })
             }
           },

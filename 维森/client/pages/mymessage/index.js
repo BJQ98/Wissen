@@ -29,7 +29,7 @@ Page({
     let modeDecode = decodeURIComponent(modeEncode)
     let mode = JSON.parse(base64.decode(modeDecode))
     var tempdata = mode
-
+    console.log(mode)
     for (var i = 0; i < tempdata.length; i++) {
       tempdata[i].eventStart = tempdata[i].eventStart.slice(0, 10)
       tempdata[i].eventEnd = tempdata[i].eventEnd.slice(0, 10)
